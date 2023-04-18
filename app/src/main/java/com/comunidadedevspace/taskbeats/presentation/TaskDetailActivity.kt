@@ -1,4 +1,4 @@
-package com.comunidadedevspace.taskbeats
+package com.comunidadedevspace.taskbeats.presentation
 
 import android.app.Activity
 import android.content.Context
@@ -11,11 +11,13 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import com.comunidadedevspace.taskbeats.R
+import com.comunidadedevspace.taskbeats.data.Task
 import com.google.android.material.snackbar.Snackbar
 
 class TaskDetailActivity : AppCompatActivity() {
 
-    private var task:Task? = null
+    private var task: Task? = null
     private lateinit var btnDone: Button
     companion object{
         private const val TASK_DETAIL_EXTRA = "task.extra.detail"
@@ -52,7 +54,7 @@ class TaskDetailActivity : AppCompatActivity() {
 
             if(title.isNotEmpty() && desc.isNotEmpty()){
                 if(task == null){
-                    addOrUpdateTask(0,title,desc,ActionType.CREATE)
+                    addOrUpdateTask(0,title,desc, ActionType.CREATE)
                 }else{
                     addOrUpdateTask(task!!.id, title, desc, ActionType.UPDATE)
                 }
@@ -99,7 +101,7 @@ class TaskDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun returnAction(task: Task,actionType: ActionType){
+    private fun returnAction(task: Task, actionType: ActionType){
         val intent = Intent()
             .apply {
                 val taskAction = TaskAction(task, actionType.name)

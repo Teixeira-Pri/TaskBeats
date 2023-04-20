@@ -8,9 +8,6 @@
 
     <include layout="@layout/toolbar"/>
 
-    <!-- assim consigo
-     e dá para dividir em blocos
-     e anotar o q vc precisa -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_task_list"
@@ -54,7 +51,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="24dp"
+            android:layout_margin="36dp"
             android:text="Adicione uma tarefa"
             style="@style/Title3" />
 
